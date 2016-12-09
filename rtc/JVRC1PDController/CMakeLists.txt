@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 2.8)
 
 project(JVRC1PDController)
 
+find_package(catkin REQUIRED)
 find_package(Boost COMPONENTS system thread filesystem)
 
 include(FindPkgConfig)
@@ -18,6 +19,9 @@ link_directories(
 	${openrtm_aist_LIBRARY_DIRS}
 	${cnoid_plugin_LIBRARY_DIRS}
 	${Boost_LIBRARY_DIRS}
+)
+
+catkin_package(
 )
 
 add_library(JVRC1PDController SHARED JVRC1PDController.cpp)
