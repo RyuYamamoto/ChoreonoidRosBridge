@@ -18,45 +18,6 @@
 using namespace cnoid;
 
 static const std::string joint_name[] = {
-	"RLEG_JOINT0",
-	"RLEG_JOINT1",
-	"RLEG_JOINT2",
-	"RLEG_JOINT3",
-	"RLEG_JOINT4",
-	"RLEG_JOINT5",
-	"LLEG_JOINT0",
-	"LLEG_JOINT1",
-	"LLEG_JOINT2",
-	"LLEG_JOINT3",
-	"LLEG_JOINT4",
-	"LLEG_JOINT5",
-	"CHEST_JOINT0",
-	"CHEST_JOINT1",
-	"CHEST_JOINT2",
-	"HEAD_JOINT0",
-	"HEAD_JOINT1",
-	"RARM_JOINT0",
-	"RARM_JOINT1",
-	"RARM_JOINT2",
-	"RARM_JOINT3",
-	"RARM_JOINT4",
-	"RARM_JOINT5",
-	"RARM_JOINT6",
-	"RARM_JOINT7",
-	"LARM_JOINT0",
-	"LARM_JOINT1",
-	"LARM_JOINT2",
-	"LARM_JOINT3",
-	"LARM_JOINT4",
-	"LARM_JOINT5",
-	"LARM_JOINT6",
-	"LARM_JOINT7",
-	"LARM_F_JOINT0",
-	"LARM_F_JOINT1",
-	"RARM_F_JOINT0",
-	"RARM_F_JOINT1",
-	"RANGE_JOINT"
-#if 0
 	"R_HIP_P",
 	"R_HIP_R",
 	"R_HIP_Y",
@@ -101,7 +62,6 @@ static const std::string joint_name[] = {
 	"L_LINDEX",
 	"L_ULITTLE",
 	"L_LLITTLE"
-#endif
 };
 
 // Module specification
@@ -171,7 +131,7 @@ RTC::ReturnCode_t JointStateRosBridge::onInitialize()
 //	body = bodyItems[0]->body();
 
 	//size_t n = body->numJoints();
-	size_t n = 38;//sizeof(joint_name);
+	size_t n = 44;//sizeof(joint_name);
 	js.name.resize(n);
 	js.position.resize(n);
 	for(size_t i=0;i<n;i++){

@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 2.8)
 
 project(JVRC1PDController)
 
+find_package(catkin REQUIRED)
 find_package(Boost COMPONENTS system thread filesystem)
 
 include(FindPkgConfig)
@@ -20,6 +21,9 @@ link_directories(
 	${Boost_LIBRARY_DIRS}
 )
 
+catkin_package(
+)
+
 add_library(JVRC1PDController SHARED JVRC1PDController.cpp)
 set_target_properties(JVRC1PDController PROPERTIES PREFIX "")
 
@@ -32,5 +36,5 @@ target_link_libraries(JVRC1PDController
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
 
-install(TARGETS JVRC1PDController LIBRARY DESTINATION /usr/lib/choreonoid-1.5/rtc)
-install(FILES pdgain_jvrc1.txt DESTINATION /usr/lib/choreonoid-1.5/rtc)
+#install(TARGETS JVRC1PDController LIBRARY DESTINATION /usr/lib/choreonoid-1.6/rtc)
+install(FILES pdgain_jvrc1.txt DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
