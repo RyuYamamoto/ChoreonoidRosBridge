@@ -36,5 +36,5 @@ target_link_libraries(JVRC1PDController
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
 
-install(TARGETS JVRC1PDController LIBRARY DESTINATION /usr/lib/choreonoid-1.5/rtc)
-install(FILES pdgain_jvrc1.txt DESTINATION /usr/lib/choreonoid-1.5/rtc)
+#install(TARGETS JVRC1PDController LIBRARY DESTINATION /usr/lib/choreonoid-1.6/rtc)
+install(FILES pdgain_jvrc1.txt DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})

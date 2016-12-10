@@ -37,7 +37,8 @@ void JVRC1PDController::ReadGain(size_t numJoints,std::vector<double> &pgain,std
 	FILE *PDGain;
 	float temp_pgain,temp_dgain;
 	char joint_name[20];
-	PDGain = fopen("/usr/lib/choreonoid-1.5/rtc/pdgain_jvrc1.txt","r");
+	if((PDGain = fopen("/home/haze/catkin_ws/install/lib/JVRC1PDController/pdgain_jvrc1.txt","r")) == NULL) cout << "out" <<endl;
+	cout << "a" << endl;
 
 	pgain.clear(); dgain.clear();
 

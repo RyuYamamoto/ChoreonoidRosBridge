@@ -1,7 +1,10 @@
 <?xml version="1.0"?>
 
 <launch>
-	<include file="$(find choreonoid_ros_bridge)/launch/jvrc_rviz.launch" />
+	<arg name="PROJECT_FILE" default="$(find choreonoid_ros_bridge)/config/jvrc1_test.cnoid" />
+	<node name="choreonoid" pkg="choreonoid_ros_bridge" type="choreonoid.sh" respawn="true" args="$(arg PROJECT_FILE)" />
+
+	<include file="$(find choreonoid_ros_bridge)/launch/jvrc1_rviz.launch" />
 	<arg name="jointstate_conf_path" default="$(find JointStateBridge)/config/rtc.conf" />
 	<arg name="rangesnsor_conf_path" default="$(find RangeSensorBridge)/config/rtc.conf" />
 	
@@ -10,5 +13,5 @@
 		<param name="frame_id" value="head_hokuyo_frame" />
 	</node>
 
-	<node name="head_range_frame_id" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 /RANGE_LINK head_hokuyo_frame 20" />
+	<node name="head_range_frame_id" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 /ranger head_hokuyo_frame 20" />
 </launch>
