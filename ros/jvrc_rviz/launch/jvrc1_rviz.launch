@@ -1,0 +1,5 @@
+<launch>
+	<param name="robot_description" command="$(find xacro)/xacro.py $(find jvrc_rviz)/urdf/JVRC1.urdf" />
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find jvrc_rviz)/config/jvrc-1.rviz" />
+</launch>
