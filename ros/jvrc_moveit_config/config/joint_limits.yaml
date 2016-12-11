@@ -1,0 +1,74 @@
+# joint_limits.yaml allows the dynamics properties specified in the URDF to be overwritten or augmented as needed
+# Specific joint properties can be changed with the keys [max_position, min_position, max_velocity, max_acceleration]
+# Joint limits can be turned off with [has_velocity_limits, has_acceleration_limits]
+joint_limits:
+  L_ELBOW_P:
+    has_velocity_limits: true
+    max_velocity: 9.424770000000001
+    has_acceleration_limits: false
+    max_acceleration: 0
+  L_ELBOW_Y:
+    has_velocity_limits: true
+    max_velocity: 3.66519
+    has_acceleration_limits: false
+    max_acceleration: 0
+  L_SHOULDER_P:
+    has_velocity_limits: true
+    max_velocity: 8.90117
+    has_acceleration_limits: false
+    max_acceleration: 0
+  L_SHOULDER_R:
+    has_velocity_limits: true
+    max_velocity: 8.90117
+    has_acceleration_limits: false
+    max_acceleration: 0
+  L_SHOULDER_Y:
+    has_velocity_limits: true
+    max_velocity: 4.18879
+    has_acceleration_limits: false
+    max_acceleration: 0
+  L_WRIST_R:
+    has_velocity_limits: true
+    max_velocity: 5.75958
+    has_acceleration_limits: false
+    max_acceleration: 0
+  L_WRIST_Y:
+    has_velocity_limits: true
+    max_velocity: 3.66519
+    has_acceleration_limits: false
+    max_acceleration: 0
+  R_ELBOW_P:
+    has_velocity_limits: true
+    max_velocity: 9.424770000000001
+    has_acceleration_limits: false
+    max_acceleration: 0
+  R_ELBOW_Y:
+    has_velocity_limits: true
+    max_velocity: 3.66519
+    has_acceleration_limits: false
+    max_acceleration: 0
+  R_SHOULDER_P:
+    has_velocity_limits: true
+    max_velocity: 8.90117
+    has_acceleration_limits: false
+    max_acceleration: 0
+  R_SHOULDER_R:
+    has_velocity_limits: true
+    max_velocity: 8.90117
+    has_acceleration_limits: false
+    max_acceleration: 0
+  R_SHOULDER_Y:
+    has_velocity_limits: true
+    max_velocity: 4.18879
+    has_acceleration_limits: false
+    max_acceleration: 0
+  R_WRIST_R:
+    has_velocity_limits: true
+    max_velocity: 5.75958
+    has_acceleration_limits: false
+    max_acceleration: 0
+  R_WRIST_Y:
+    has_velocity_limits: true
+    max_velocity: 3.66519
+    has_acceleration_limits: false
+    max_acceleration: 0
