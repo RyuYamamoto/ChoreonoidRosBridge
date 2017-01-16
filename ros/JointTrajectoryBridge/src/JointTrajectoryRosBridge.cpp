@@ -27,11 +27,19 @@ JointTrajectoryRosBridge::~JointTrajectoryRosBridge()
 
 void JointTrajectoryRosBridge::joint_trajectory_callback(const trajectory_msgs::JointTrajectory::ConstPtr& msg)
 {
+	size_t joint_size = msg->joint_names.size();
+
+	joint_name_.resize(joint_size);
+	for(size_t i=0;i<joint_size;i++){
+		joint_name_[i] = msg->joint_names[i];
+		cout << joint_name_ [i] << " " << msg->points[i] << endl;
+	}
+	cout << "\n" ;
 }
 
 RTC::ReturnCode_t JointTrajectoryRosBridge::onInitialize()
 {
-	joint_trajectory_sub = node.subscribe("/joint_trajectory_control", 1000, &JointTrajectoryRosBridge::joint_trajectory_callback, this);
+	joint_trajectory_sub = node.subscribe("/JVRC_1/torque_control/set_joint_trajectory", 1000, &JointTrajectoryRosBridge::joint_trajectory_callback, this);
 
 	return RTC::RTC_OK;
 }

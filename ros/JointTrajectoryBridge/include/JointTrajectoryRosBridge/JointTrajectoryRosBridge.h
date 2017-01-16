@@ -13,9 +13,14 @@ using namespace RTC;
 #include <rtm/DataInPort.h>
 #include <rtm/DataOutPort.h>
 
+#include <iostream>
+#include <vector>
 #include <string>
+
+using namespace std;
+
 #include <ros/ros.h>
-#include <trajectory_msgs::JointTrajectory.h>
+#include <trajectory_msgs/JointTrajectory.h>
 
 class JointTrajectoryRosBridge
 : public RTC::DataFlowComponentBase
@@ -36,6 +41,8 @@ class JointTrajectoryRosBridge
 
 	private:
 		ros::NodeHandle node;
+		vector<trajectory_msgs::JointTrajectoryPoint> points_;
+		vector<string> joint_name_;
 };
 
 
