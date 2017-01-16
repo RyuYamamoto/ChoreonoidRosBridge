@@ -15,7 +15,7 @@ using namespace RTC;
 
 #include <string>
 #include <ros/ros.h>
-#include <sensor_msgs/LaserScan.h>
+#include <trajectory_msgs::JointTrajectory.h>
 
 class JointTrajectoryRosBridge
 : public RTC::DataFlowComponentBase
@@ -24,21 +24,17 @@ class JointTrajectoryRosBridge
 		JointTrajectoryRosBridge(RTC::Manager* manager);
 		~JointTrajectoryRosBridge();
 
+		void joint_trajectory_callback(const trajectory_msgs::JointTrajectory::ConstPtr &msg);
+
 		virtual RTC::ReturnCode_t onInitialize();
 		virtual RTC::ReturnCode_t onActivated(RTC::UniqueId ec_id);
 		virtual RTC::ReturnCode_t onDeactivated(RTC::UniqueId ec_id);
 		virtual RTC::ReturnCode_t onExecute(RTC::UniqueId ec_id);
 
 	protected:
-		RTC::RangeData m_range;
-		RTC::InPort<RTC::RangeData> m_rangeIn;
-
-		ros::Publisher range_pub;
-		sensor_msgs::LaserScan laser_msg;
+		ros::Subscriber joint_trajectory_sub;
 
 	private:
-		int counter;
-		std::string _frame_id;
 		ros::NodeHandle node;
 };
 

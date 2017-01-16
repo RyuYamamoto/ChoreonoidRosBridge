@@ -11,7 +11,7 @@ pkg_check_modules(openrtm_aist REQUIRED openrtm-aist)
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES JointTrajectoryBridge
-  CATKIN_DEPENDS roscpp std_msgs tf
+  CATKIN_DEPENDS roscpp std_msgs tf trajectory_msgs
   DEPENDS system_lib
 )
 
